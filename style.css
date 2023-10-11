@@ -16,15 +16,23 @@ h1 {
   text-align: center;
 }
 
+#border{
+  border: 10px;
+  margin: 0 256px;
+  background-color: black;
+}
+
 .grid {
   display: flex;
   /* flex-direction: column; */
   justify-content: center;
-  /* gap: 2px; */
+  gap: 2px;
+  
   
 }
 
 .square{
+  
   display: flex;
   
   justify-content: center;
@@ -36,6 +44,7 @@ h1 {
   background-color: pink;
   color: black;
 
+  margin-top: 2px;
 
   width: 32px;
   height: 32px;

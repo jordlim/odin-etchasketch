@@ -6,7 +6,6 @@ function sketch() {
     for (let i = 0; i < 16; i++) {
       const square = document.createElement("div");
       square.classList.add("square");
-      square.textContent = i + 1;
 
       col.appendChild(square);
     }
@@ -19,13 +18,13 @@ function sketch() {
     hov.addEventListener(
       "mouseover", () => {
       // console.log("enter");
-      hov.style.backgroundColor="white";
+      hov.style.backgroundColor="black";
 
       });
       
     hov.addEventListener(  
       "mouseout", () => {
-      hov.style.backgroundColor="pink";
+      hov.style.backgroundColor="gray";
       // console.log("exit");
       });
     });
