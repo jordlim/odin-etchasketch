@@ -1,0 +1,43 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  /* display: flex;
+  flex-direction: column; */
+}
+
+h1 {
+  color: rgb(35, 96, 149);
+  background-color: aliceblue;
+  text-align: center;
+}
+
+.grid {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  /* gap: 2px; */
+  
+}
+
+.square{
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+
+  /* keep as square for now */
+  flex-shrink: 0;
+
+  background-color: pink;
+  color: black;
+
+
+  width: 32px;
+  height: 32px;
+
+}
