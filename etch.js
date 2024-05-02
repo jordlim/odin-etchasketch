@@ -1,9 +1,4 @@
-/* need to rework how squares work
-currently they have width, height, + 2px around
-if it's 16x16, it should be 12x12 inside and 2px around using padding
-*/
 function sketch(size) {
-  // document.querySelector(".grid").remove();
   const grid = document.querySelector(".grid");
   grid.innerHTML = "";
 
@@ -17,9 +12,7 @@ function sketch(size) {
       let side = 640/sizeInt;
       
       square.style.width = side + "px";
-      console.log(square.style.width);
       square.style.height = side + "px";
-      console.log(square.style.height);
 
       col.appendChild(square);
     }
@@ -27,19 +20,42 @@ function sketch(size) {
   }
 
   const hover = document.querySelectorAll(".square");
-
+  let color = false;
+  document.getElementById("random").addEventListener("click", function() {
+    color = true;
+    console.log("random");
+  });
+  // Color issue where the last 2 change
   hover.forEach((hov) => {
+    let r = 0;
+    let g = 0;
+    let b = 0;
     hov.addEventListener(
       "mouseover", () => {
-      // console.log("enter");
-      hov.style.backgroundColor="black";
+      if (color) {
+        // Math.floor(Math.random() * (max - min + 1)) + min
+        r = Math.floor(Math.random() * (100)) + 100;
+        g = Math.floor(Math.random() * (100)) + 100;
+        b = Math.floor(Math.random() * (100)) + 100;
+        hov.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        ;
+      }
+      else{
+        hov.style.backgroundColor="black";
+      }
 
       });
       
     hov.addEventListener(  
       "mouseout", () => {
-      hov.style.backgroundColor="gray";
-      // console.log("exit");
+      if (color) {
+        hov.style.backgroundColor = `rgb(${r*1.1}, ${g*1.1}, ${b*1.1})`;
+        ;
+      }
+      else{
+        hov.style.backgroundColor="gray";
+      }
+      
       });
     });
 
@@ -50,15 +66,20 @@ function sketch(size) {
 function resize() {
   let text;
   let size = prompt("Squares per side (Max 100):", "16");
-  if (size == null || parseInt(size) < 0 || parseInt(size) > 100 ) {
+  if (size == null || parseInt(size) < 1 || parseInt(size) > 100 ) {
     text = "Invalid size (Must be between 1 and 100)";
   } else {
     console.log("resizing");
-    text = size + "x" + size;
+    text = "<b>" + size + "x" + size + "</b>";
     sketch(parseInt(size));
   }
   document.getElementById("size").innerHTML = text;
   
+}
+
+function randomize() {
+  let color;
+
 }
 
 
