@@ -25,7 +25,7 @@ function sketch(size) {
     color = true;
     console.log("random");
   });
-  // Color issue where the last 2 change
+
   hover.forEach((hov) => {
     let r = 0;
     let g = 0;
@@ -49,7 +49,7 @@ function sketch(size) {
     hov.addEventListener(  
       "mouseout", () => {
       if (color) {
-        // hov.style.backgroundColor = `rgb(${r*1.1}, ${g*1.1}, ${b*1.1})`;
+        // leave as is
       
       }
       else{
