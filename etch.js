@@ -49,8 +49,8 @@ function sketch(size) {
     hov.addEventListener(  
       "mouseout", () => {
       if (color) {
-        hov.style.backgroundColor = `rgb(${r*1.1}, ${g*1.1}, ${b*1.1})`;
-        ;
+        // hov.style.backgroundColor = `rgb(${r*1.1}, ${g*1.1}, ${b*1.1})`;
+      
       }
       else{
         hov.style.backgroundColor="gray";
